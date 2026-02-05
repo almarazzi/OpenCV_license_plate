@@ -36,8 +36,10 @@ Questo progetto utilizza **OpenCV** e **Tesseract** per eseguire il riconoscimen
 
 9. **Salvataggio del Risultato**  
    L'immagine elaborata viene salvata in formato PNG, e il testo riconosciuto viene stampato a schermo insieme alla sua precisione.
-
+   
+## Diagramma del flusso
 ![Diagramma di Fusso](Flusso_OpenCV_e_Tesseract.png)
+
 ## Requisiti
 
 - **.NET Core o .NET Framework** per eseguire il codice.
