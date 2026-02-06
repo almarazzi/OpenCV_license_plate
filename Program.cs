@@ -42,11 +42,11 @@ Rect roiTT = new Rect(RoiSinstra.Width + RoiSinstra.X+(RoiSinstra.Width / 2), Ma
 Mat f = new Mat(p, roiTT); // Taglio la foto con la roi(RoiTT)
 
 
-Point Ss = new Point(RoiSinstra.X - roiTT.X, RoiSinstra.Y - roiTT.Y); // Calcolo il centro del rettangolo sinistro
-Point Dd = new Point(RoiDestra.X - roiTT.X, RoiDestra.Y - roiTT.Y); //  Calcolo il centro del rettangolo destro 
-double dx =( Dd.X + RoiDestra.Width / 2) -( Ss.X + RoiSinstra.Width / 2); // trovo le coordinate x 
-double dy = (Dd.Y + RoiDestra.Height / 2) - (Ss.Y + RoiSinstra.Height / 2); // trovo le coordinate y
-Point2f Centro = new Point2f(f.Width / 2, f.Height / 2); // trovo le coordinate del centro della roi(roiTT) 
+Point Ss = new Point(RoiSinstra.X - roiTT.X, RoiSinstra.Y - roiTT.Y); // Porto il rettangolo di sinsta nel riferimento di roiTT cosi roiTT diventa il entro
+Point Dd = new Point(RoiDestra.X - roiTT.X, RoiDestra.Y - roiTT.Y); // Porto il rettangolo di destra nel riferimento di roiTT cosi roiTT diventa il entro
+double dx =( Dd.X + RoiDestra.Width / 2) -( Ss.X + RoiSinstra.Width / 2); // Calolo le coordinate della x del centro della retta passante per la roi di destra e di sinistra
+double dy = (Dd.Y + RoiDestra.Height / 2) - (Ss.Y + RoiSinstra.Height / 2); // Calolo le coordinate della x del centro della retta passante per la roi di destra e di sinistra
+Point2f Centro = new Point2f(f.Width / 2, f.Height / 2); // trovo le coordinate del centro della di f
 
 double Angolo = Math.Atan2(dy, dx) * 180 / Math.PI; // Calcolo l'angolo per l'inglinazione 
 Mat rotazione = Cv2.GetRotationMatrix2D(Centro, Angolo, 1); // Calocolo la matrice 2d per la rotazione 
