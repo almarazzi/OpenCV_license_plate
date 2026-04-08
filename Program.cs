@@ -42,8 +42,8 @@ Rect roiTT = new Rect(RoiSinstra.Width + RoiSinstra.X+(RoiSinstra.Width / 2), Ma
 Mat f = new Mat(p, roiTT); // Taglio la foto con la roi(RoiTT)
 
 
-Point Ss = new Point(RoiSinstra.X - roiTT.X, RoiSinstra.Y - roiTT.Y); // Porto il rettangolo di sinsta nel riferimento di roiTT cosi roiTT diventa il entro
-Point Dd = new Point(RoiDestra.X - roiTT.X, RoiDestra.Y - roiTT.Y); // Porto il rettangolo di destra nel riferimento di roiTT cosi roiTT diventa il entro
+Point Ss = new Point(RoiSinstra.X - roiTT.X, RoiSinstra.Y - roiTT.Y); // Porto il rettangolo di sinsta nel riferimento di roiTT cosi roiTT diventa il centro
+Point Dd = new Point(RoiDestra.X - roiTT.X, RoiDestra.Y - roiTT.Y); // Porto il rettangolo di destra nel riferimento di roiTT cosi roiTT diventa il centro
 double dx =( Dd.X + RoiDestra.Width / 2) -( Ss.X + RoiSinstra.Width / 2); // Calolo le coordinate della x del centro della retta passante per la roi di destra e di sinistra
 double dy = (Dd.Y + RoiDestra.Height / 2) - (Ss.Y + RoiSinstra.Height / 2); // Calolo le coordinate della x del centro della retta passante per la roi di destra e di sinistra
 Point2f Centro = new Point2f(f.Width / 2, f.Height / 2); // trovo le coordinate del centro della di f
